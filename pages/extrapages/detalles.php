@@ -215,8 +215,16 @@ if ($tipo == 'producto') {
                 </div>
             </div>
         </section>
+        <section class="product-details spad">
+            <div class="container">
+                <div class="row">
     <?php
-
+                    consultarProdRel ($producto['categoria'],1);
+    ?>
+                </div>
+            </div>
+        </section>
+    <?php
     }
 }
 

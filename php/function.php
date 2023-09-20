@@ -127,7 +127,70 @@ function consultarProd($status, $idProd = false){
                             <li><a class="cursor hover-white shadow-s" onclick=""><i class="fa fa-cart-plus"></i></a></li>
                         </ul>
                     </div>
-                    <div class="product__item__text h-shadow-l">
+                    <div class="product__item__text h-shadow-l cursor" onclick="detalles(<?php echo $producto['id'];?>,'producto','contentPrincipalNoSession')">
+                        <h6><a><?php echo $nombreProducto; ?></a></h6>
+                        <!-- <div class="rating">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div> -->
+                        <?php if ($producto['descuento']>0) { ?>
+                            <div class="product__price"><?php echo $precioCD; ?> <span><?php echo $precioNormal; ?></span></div>
+                        <?php }else{ ?>
+                            <div class="product__price"><?php echo $precioNormal; ?></div>
+                        <?php } ?>
+                    </div>
+                </div>
+            </div>
+    <?php 
+        }
+}
+
+// consultar productos relacionados para listarlos 
+
+function consultarProdRel($idCategoria,$status, $idProd = false){
+    include 'conexion-bd.php';
+
+    if ($idProd) {
+        $consultarDatosProd = mysqli_query($conexion," SELECT * FROM productos WHERE categoria = $idCategoria AND status = $status AND id = '$idProd' LIMIT 4 ");
+    }else {
+        $consultarDatosProd = mysqli_query($conexion," SELECT * FROM productos WHERE categoria = $idCategoria AND status = $status LIMIT 4 ");
+    }
+    ?>
+    
+        <div class="col-lg-12 text-center">
+            <div class="related__title">
+                <h5>Productos Relacionados</h5>
+            </div>
+        </div>
+    <?php
+        while ($producto = mysqli_fetch_array($consultarDatosProd)) {
+
+            $precioNormal=formatoAPrecio($producto['precio']);
+            $precioCD=formatoAPrecio(calcularPrecioDescuento($producto['precio'],$producto['descuento'],0));
+
+            if (strlen ( $producto['nombre'])>23) {
+                $nombreProducto = substr($producto['nombre'],0,24).'...';
+            }else {
+                $nombreProducto = $producto['nombre'];
+            }
+    ?>
+            <div class="col-lg-3 col-md-4 col-sm-6">
+                <div class="product__item">
+                    <div class="product__item__pic set-bg" data-setbg="<?php echo $producto['img']; ?>">
+                        <?php if ($producto['descuento']>0) { ?>
+                            <div class="label stockblue"><?php echo $producto['descuento']; ?> % OFF</div>
+                            <?php } ?>
+                        <ul class="product__hover">
+                            <!-- <li><a class="cursor hover-white shadow-s" data-toggle="modal" data-target=".bd-example-modal-xl"><i class="fa fa-plus"></i></a></li> -->
+                            <li><a class="cursor hover-white shadow-s" onclick="detalles(<?php echo $producto['id'];?>,'producto','contentPrincipalNoSession')"><i class="fa fa-plus"></i></a></li>
+                            <li><a class="cursor hover-white shadow-s" onclick=""><i class="fa fa-heart"></i></a></li>
+                            <li><a class="cursor hover-white shadow-s" onclick=""><i class="fa fa-cart-plus"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text h-shadow-l cursor" onclick="detalles(<?php echo $producto['id'];?>,'producto','contentPrincipalNoSession')">
                         <h6><a><?php echo $nombreProducto; ?></a></h6>
                         <!-- <div class="rating">
                             <i class="fa fa-star"></i>
