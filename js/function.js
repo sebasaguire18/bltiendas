@@ -35,6 +35,25 @@ function contenido(ventana) {
     // }
     
 }
+function filtroCat(ventana,categoria) {
+    $('#contentPrincipalNoSession').html(``);
+    $.ajax({
+        type: "POST",
+        url: "pages/"+ ventana +".php",
+        data: "ventana=" + ventana + "&categoria=" + categoria,
+        success: function(r) {
+            configPage(ventana);
+            $('#contentPrincipalNoSession').html(r);
+
+
+            // cargar las imagenes que hayan en la página que se imprimio
+            $('.set-bg').each(function () {
+                var bg = $(this).data('setbg');
+                $(this).css('background-image', 'url(' + bg + ')');
+            });
+        }
+    });    
+}
 
 // función que da configuraciones extra al cargar el contenido de la vista
 function configPage(page) {
@@ -44,6 +63,11 @@ function configPage(page) {
         $('.nav-item-' + page).addClass('active');
         $('#titlePageNS').html(`Inicio`);
     }if(page == 'shop'){
+        
+        $('.nav-item').removeClass('active');
+        $('.nav-item-' + page).addClass('active');
+        $('#titlePageNS').html(`Tienda`);
+    }if(page == 'shopFilter'){
         
         $('.nav-item').removeClass('active');
         $('.nav-item-' + page).addClass('active');

@@ -54,3 +54,5 @@
         </div>
     </div>
 </section>
+
+<?php include '../includes/band.php'; ?>

@@ -1,10 +1,17 @@
-<?php include '../php/function.php'; ?>
+<?php include '../php/function.php'; 
+    $categoria = $_POST['categoria'];
+?>
 <section class="product spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 col-md-12">
-                <div class="section-title dp-flex jfy-ctn-center ">
+            <div class="col-lg-4 col-md-4">
+                <div class="section-title">
                     <h4>Productos</h4>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-8">
+                <div class="section-title dp-flex jfy-ctn-center ">
+                    <h4><?php echo consultarNombreCat($categoria); ?></h4>
                 </div>
             </div>
         </div>
@@ -34,7 +41,7 @@
                     </div>
                 </div>
             </div>
-            <?php consultarProd(1); ?>
+            <?php consultarProdFilter($categoria); ?>
         </div>
     </div>
 </section>
