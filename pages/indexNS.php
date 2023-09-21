@@ -1,3 +1,4 @@
+<?php include '../php/function.php'; ?>
 <section class="categories">
     <div class="container-fluid">
         <div class="row">
@@ -56,3 +57,15 @@
 </section>
 
 <?php include '../includes/band.php'; ?>
+
+
+
+<section class="product spad">
+    <div class="container">
+        <div class="row property__gallery">
+            <?php consultarProd(1); ?>
+        </div>
+    </div>
+</div>
+
+
