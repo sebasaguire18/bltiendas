@@ -286,6 +286,28 @@ function consultarProdRel($idCategoria,$status, $idProd = false){
         }
 }
 
+// consultar status de la venta temporal con opcion de regresar el numero del estado
+
+function consultarEstadoVTMP($id_comprador){
+
+    include '../php/conexion-bd.php';
+
+    $consultaVTPM= mysqli_query($conexion,"SELECT * FROM ventas WHERE id_comprador = $id_comprador AND status=2");
+    $row = mysqli_num_rows($consultaVTPM);
+    
+    return $row; 
+}
+
+// consulta el id del usuario que tiene session iniciada
+function consultarUserSession(){
+    session_start();
+
+    if($_SESSION['usu_id']){
+        return $_SESSION['usu_id'];
+    }else{
+        return 0;
+    }
+}
 // consultar nombre de la categoria según el id
 
 function consultarNombreCat($id){

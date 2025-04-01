@@ -53,7 +53,7 @@ $tipo = $_POST['tipo'];
     if ($tipo == 'eliminarDato') {
         
         $idEliminar = $_POST['idEliminar'];
-
+        
         $eliminarDato=eliminarDato($idEliminar);
 
         if ($eliminarDato === true) {
@@ -65,5 +65,5 @@ $tipo = $_POST['tipo'];
         }
 
     }
-
+    
 // -----------------------------DATOS----------------------------- //

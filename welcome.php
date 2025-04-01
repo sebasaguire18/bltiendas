@@ -13,6 +13,7 @@
     </head>
     <body>
         <div id="app">
+            <span class="ir-arriba icon-chevron-thin-up"></span>
             <?php include 'includes/nav.php'; ?>
         
             <div id="main">        
@@ -36,6 +37,10 @@
         
     </body>
 </html>
+<script>
+	contenido('index',true);
+
+</script>
 
 <?php
   }else{

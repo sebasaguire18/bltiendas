@@ -33,10 +33,10 @@ if($_SESSION['usu_id']){
             }
         }
     }
-
+    
     function eliminarDato($idEliminar){
         include 'conexion-bd.php';
-
+        
         $eliminarDato = mysqli_query($conexion,"UPDATE tabla SET tabla_status = 0 WHERE tabla_id = '$idEliminar'");
         
         if ($eliminarDato) {
@@ -44,6 +44,15 @@ if($_SESSION['usu_id']){
         }else {
             return false;
         }
+    }
+    
+    function queryShoppingCart($id_comprador){
+        include 'conexion-bd.php';
+
+        $consultaCarrito= mysqli_query($conexion,"SELECT * FROM ventas WHERE id_comprador = $id_comprador AND status=2");
+        $row = mysqli_num_rows($consultaCarrito);
+        
+        return $row; 
     }
 
 }else {

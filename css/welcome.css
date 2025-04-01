@@ -4189,3 +4189,16 @@ mark,
         height: 100% !important;
     }
 }
+
+.ir-arriba{
+    display: none;
+    padding: 10px;
+    background: #6666ff;
+    font-size:18px;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom:45px;
+    right: 35px;
+    border-radius: 20px 20px 20px 20px;
+}

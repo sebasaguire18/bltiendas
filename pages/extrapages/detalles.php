@@ -111,6 +111,7 @@ if ($tipo == 'producto') {
                                     <div class="pro-qty">
                                         <input type="text" id="cantidadProductoDet" value="1">
                                     </div>
+                                    <input type="hidden" id="idProductoDetalle" value="<?php echo $producto['id']; ?>">
                                 </div>
                                 <a onclick="insertarNuevoDato()" class="cart-btn cursor"><i class="fa fa-cart-plus"></i></a>
                                 <ul class="dp-flex alg-itm-center jfy-ctn-center">

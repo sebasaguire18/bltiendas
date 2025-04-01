@@ -27,25 +27,36 @@
                 </nav>
             </div>
             <div class="col-lg-3">
-                <div class="header__right">
-                    <div class="header__right__auth">
-                        <a class="cursor" onclick="">Iniciar Sesión</a>
-                        <a class="cursor" onclick="">Restrarse</a>
-                    </div>
-                    <ul class="header__right__widget">
-                        <li><i class="fa fa-search"></i></li>
-                        <li><a class="cursor" onclick=""><i class="fa fa-heart"></i>
-                            <div class="tip">2</div>
-                        </a></li>
-                        <li><a class="cursor" onclick=""><i class="fa fa-shopping-cart"></i>
-                            <div class="tip">2</div>
-                        </a></li>
-                    </ul>
-                </div>
+                <?php 
+                    if($_SESSION['id_user']){
+                        $idUserSession=$_SESSION['id_user'];
+                ?>
+                        <div class="header__right">
+                            <ul class="header__right__widget">
+                                <li><i class="fa fa-search"></i></li>
+                                <li><a class="cursor" onclick=""><i class="fa fa-heart"></i>
+                                    <div class="tip">2</div>
+                                </a></li>
+                                <li><a class="cursor" onclick=""><i class="fa fa-shopping-cart"></i>
+                                    <div class="tip" id="cantCart">0</div>
+                                </a></li>
+                            </ul>
+                        </div>
+                <?php }else{ ?>
+                        <div class="header__right">
+                            <div class="header__right__auth">
+                                <a class="cursor" data-toggle="modal" data-target="#exampleModalCenter">Iniciar Sesión</a>
+                                <!-- <a class="cursor" onclick="">Restrarse</a> -->
+                            </div>
+                        </div>
+                <?php } ?>
             </div>
         </div>
         <div class="canvas__open">
             <i class="fa fa-bars"></i>
         </div>
     </div>
+
+    
 </header>
+    
