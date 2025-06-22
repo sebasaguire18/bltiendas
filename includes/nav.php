@@ -1,19 +1,28 @@
+
+<div class="offcanvas-menu-overlay"></div>
+    <div class="offcanvas-menu-wrapper">
+        <div class="offcanvas__close">+</div>
+        <div id="mobile-menu-wrap"></div>
+        <div class="offcanvas__auth mt-5">
+            <a href="#">Login</a>
+            <a href="#">Register</a>
+        </div>
+    </div>
+
 <header class="header pst-stcky fix-t">
     <div class="container-fluid">
         <div class="row">
             <div class="col-xl-3 col-lg-2">
                 <div class="header__logo">
-                    <a class="cursor w-15" onclick="contenido('indexNS')"><img src="images/logo.png" width="100%"></a>
+                    <a class="cursor w-10 w-md-30" onclick="contenido('indexNS')"><img src="images/logo.png" width="100%"></a>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-7">
                 <nav class="header__menu">
                     <ul>
                         <li class="nav-item nav-item-indexNS"><a class="cursor" onclick="contenido('indexNS')">Inicio</a></li>
-                        <li class="nav-item nav-item-"><a class="cursor" onclick="">Women’s</a></li>
-                        <li class="nav-item nav-item-"><a class="cursor" onclick="">Men’s</a></li>
-                        <li class="nav-item nav-item-shop"><a class="cursor" onclick="contenido('shop')">Tienda</a></li>
-                        <li class="nav-item nav-item-"><a class="cursor" onclick="">Pages</a>
+                        <li class="nav-item my-lg-0 my-3 nav-item-shop"><a class="cursor" onclick="contenido('shop')">Tienda</a></li>
+                        <!-- <li class="nav-item nav-item-"><a class="cursor" onclick="">Pages</a>
                             <ul class="dropdown">
                                 <li><a class="cursor" onclick="">Product Details</a></li>
                                 <li><a class="cursor" onclick="">Shop Cart</a></li>
@@ -21,8 +30,8 @@
                                 <li><a class="cursor" onclick="">Blog Details</a></li>
                             </ul>
                         </li>
-                        <li><a class="cursor" onclick="">Blog</a></li>
-                        <li><a class="cursor" onclick="">Contact</a></li>
+                        <li><a class="cursor" onclick="">Blog</a></li> -->
+                        <li class="nav-item nav-item-contacto"><a class="cursor" onclick="contenido('contacto')">Contacto</a></li>
                     </ul>
                 </nav>
             </div>

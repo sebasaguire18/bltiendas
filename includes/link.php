@@ -34,4 +34,4 @@
 <link rel="stylesheet" href="css/template/jquery-ui.min.css" type="text/css">
 <link rel="stylesheet" href="css/template/magnific-popup.css" type="text/css">
 <link rel="stylesheet" href="css/template/owl.carousel.min.css" type="text/css">
-<link rel="stylesheet" href="css/template/slicknav.min.css" type="text/css">
+<!-- <link rel="stylesheet" href="css/template/slicknav.min.css" type="text/css"> -->

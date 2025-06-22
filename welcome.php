@@ -13,7 +13,7 @@
     </head>
     <body>
         <div id="app">
-            <span class="ir-arriba icon-chevron-thin-up"></span>
+            <span class="ir-arriba icon-chevron-thin-up shadow"></span>
             <?php include 'includes/nav.php'; ?>
         
             <div id="main">        

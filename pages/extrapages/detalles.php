@@ -21,8 +21,8 @@ if ($tipo == 'producto') {
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="breadcrumb__links">
-                                <a ><i class="fa fa-home"></i> Inicio</a>
-                                <a >Tienda </a>
+                                <a class="cursor" onclick="contenido('indexNS')"><i class="fa fa-home"></i> Inicio</a>
+                                <a class="cursor" onclick="contenido('shop')">Tienda </a>
                                 <span class="cursor" onclick="detalles(<?php echo $producto['id'];?>,'producto','contentPrincipalNoSession')"><?php echo $producto['nombre']; ?></span>
                             </div>
                         </div>
@@ -30,7 +30,8 @@ if ($tipo == 'producto') {
                 </div>
             </div>
         <!-- Breadcrumb -->
-        
+
+
         <section class="product-details spad">
             <div class="container">
                 <div class="row">
@@ -172,20 +173,20 @@ if ($tipo == 'producto') {
                                 <li class="nav-item">
                                     <a class="nav-link active" data-toggle="tab" href="#tabs-1" role="tab">Descripción</a>
                                 </li>
-                                <li class="nav-item">
+                                <!-- <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#tabs-2" role="tab">Specification</a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" data-toggle="tab" href="#tabs-3" role="tab">Reviews ( 2 )</a>
-                                </li>
+                                </li> -->
                             </ul>
                             <div class="tab-content">
                                 <div class="tab-pane active" id="tabs-1" role="tabpanel">
-                                    <h6>Descripción</h6>
-                                    <p><?php echo $producto['detalles']; ?></p>
+                                    <h3>Descripción</h3>
+                                    <p class="h5"><?php echo $producto['detalles']; ?></p>
                                 </div>
                                 <div class="tab-pane" id="tabs-2" role="tabpanel">
-                                    <h6>Specification</h6>
+                                    <h3>Specification</h3>
                                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed
                                         quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt loret.
                                         Neque porro lorem quisquam est, qui dolorem ipsum quia dolor si. Nemo enim ipsam
@@ -198,7 +199,7 @@ if ($tipo == 'producto') {
                                     quis, sem.</p>
                                 </div>
                                 <div class="tab-pane" id="tabs-3" role="tabpanel">
-                                    <h6>Reviews ( 2 )</h6>
+                                    <h3>Reviews ( 2 )</h3>
                                     <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed
                                         quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt loret.
                                         Neque porro lorem quisquam est, qui dolorem ipsum quia dolor si. Nemo enim ipsam

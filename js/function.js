@@ -51,6 +51,7 @@ function contenido(ventana, session = false) {
   //     });
   // }
 }
+
 function filtroCat(ventana, categoria) {
   $("#contentPrincipalNoSession").html(``);
   $.ajax({
@@ -72,25 +73,23 @@ function filtroCat(ventana, categoria) {
 
 // función que da configuraciones extra al cargar el contenido de la vista
 function configPage(page) {
+  $(".nav-item").removeClass("active");
+  $(".nav-item-" + page).addClass("active");
   if (page == "indexNS") {
     // contentNav('indexNS');
-    $(".nav-item").removeClass("active");
-    $(".nav-item-" + page).addClass("active");
     $("#titlePageNS").html(`Inicio`);
   }
   if (page == "shop") {
-    $(".nav-item").removeClass("active");
-    $(".nav-item-" + page).addClass("active");
     $("#titlePageNS").html(`Tienda`);
   }
   if (page == "shopFilter") {
-    $(".nav-item").removeClass("active");
-    $(".nav-item-" + page).addClass("active");
     $("#titlePageNS").html(`Tienda`);
   }
   if (page == "detalle-producto") {
-    $(".nav-item").removeClass("active");
-    $("#titlePageNS").html(`Detalle de Producto`);
+    $("#titlePageNS").html(`Detalles de Producto`);
+  }
+  if (page == "contacto") {
+    $("#titlePageNS").html(`Contacto`);
   }
 }
 
@@ -365,6 +364,12 @@ function detalles(id, tipo, sesion) {
       url: "pages/extrapages/detalles.php",
       data: "tipo=" + tipo + "&id=" + id,
       success: function (r) {
+        $("body, html").animate(
+          {
+            scrollTop: "0px",
+          },
+          1000
+        );
         configPage("detalle-" + tipo);
         $("#" + sesion).html(r);
 
@@ -393,6 +398,8 @@ function detalles(id, tipo, sesion) {
             }
           }
           $button.parent().find("input").val(newVal);
+
+          
         });
       },
     });
@@ -495,6 +502,11 @@ function editarDato(id) {
 // Función que limpia formularios por id
 function limpiarFormulario(nombre) {
   document.getElementById(nombre).reset();
+}
+
+// Función que convierte la primera letra de un string a mayúscula
+function capitalizarPrimeraLetra(str) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 // sweetAlert

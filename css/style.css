@@ -8,7 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 10000;
+    z-index: 1000099;
     overflow: hidden;
     visibility: hidden;
 }
@@ -480,6 +480,7 @@ ol {
 }
 
 .header__menu {
+	text-align: center;
 	padding: 30px 0 27px;
 }
 
@@ -3426,7 +3427,7 @@ ol {
 		background: #ffffff;
 		padding: 90px 20px 30px 30px;
 		display: block;
-		z-index: 99;
+		z-index: 99999;
 		overflow-y: auto;
 		-webkit-transition: all, 0.5s;
 		-o-transition: all, 0.5s;
@@ -3577,7 +3578,7 @@ ol {
 		width: 100%;
 		background: rgba(0, 0, 0, 0.7);
 		content: "";
-		z-index: 98;
+		z-index: 98888;
 		-webkit-transition: all, 0.5s;
 		-o-transition: all, 0.5s;
 		transition: all, 0.5s;
@@ -3594,7 +3595,7 @@ ol {
 		background: #ffffff;
 		padding: 90px 20px 30px 30px;
 		display: block;
-		z-index: 99;
+		z-index: 99999;
 		overflow-y: auto;
 		-webkit-transition: all, 0.5s;
 		-o-transition: all, 0.5s;

@@ -750,9 +750,9 @@ mark,
 .ruler-link_child:hover{
     background-color: rgba(255, 255, 255, 0.5);
 }
-.active{
+/* .active{
     background-color: rgba(255, 255, 255, 0.5)!important;
-}
+} */
 .ruler-input{
     padding: .5rem;
     display: flex;
@@ -807,6 +807,9 @@ mark,
     }
 }
 
+ul{
+    list-style: none;
+}
 
 
 .following {
@@ -4201,4 +4204,20 @@ mark,
     bottom:45px;
     right: 35px;
     border-radius: 20px 20px 20px 20px;
+    z-index: 100000;
+}
+
+.carrito{
+    display: none;
+    padding: 10px;
+    margin: 10px;	
+    background: #ee504a;
+    font-size: 25px!important;
+    color: #fff;
+    cursor: pointer;
+    position: fixed;
+    bottom:45px;
+    left: 35px;
+    border-radius: 50%;
+    z-index: 1000;
 }

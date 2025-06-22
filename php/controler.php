@@ -65,5 +65,24 @@ $tipo = $_POST['tipo'];
         }
 
     }
+
+    // ----------------------------- ENVIO DE DATOS DEL FORMULARIO DE CONTACTO ----------------------------- //
+    if ($tipo == 'EnviarDatosContacto') {
+        
+        $emailContacto = $_POST['emailContacto'];
+        $asuntoContacto = $_POST['asuntoContacto'];
+        $mensajeContacto = $_POST['mensajeContacto'];
+        
+        $enviarDatosContacto=enviarDatosContacto($emailContacto, $asuntoContacto, $mensajeContacto);
+
+        if ($enviarDatosContacto === true) {
+            $html = 1;
+            echo $html;
+        }else {
+            $html = 'error';
+            echo $html;
+        }
+
+    }
     
 // -----------------------------DATOS----------------------------- //

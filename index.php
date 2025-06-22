@@ -21,6 +21,8 @@
     <body>
         <div id="app">
             <i class="ir-arriba fa fa-chevron-up shadow"></i>
+            <i class="carrito fa fa-cart-plus shadow"></i>
+
             <?php include 'includes/nav.php'; ?>
         
             <div id="main">        

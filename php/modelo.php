@@ -54,6 +54,24 @@ if($_SESSION['usu_id']){
         
         return $row; 
     }
+    
+    // envio de datos de contacto
+    function enviarDatosContacto($emailContacto, $asuntoContacto, $mensajeContacto){
+        include 'conexion-bd.php';
+
+        $para      = 'sebasavmt@gmail.com';
+        $asunto    = $asuntoContacto;
+        $mensaje   = $mensajeContacto;
+        $de =   'From: '. $emailContacto . "\r\n" .
+                'Reply-To: '. $emailContacto . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+
+        if (mail($para, $asunto, $mensaje, $de)){
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 }else {
     header("location: index.php");
